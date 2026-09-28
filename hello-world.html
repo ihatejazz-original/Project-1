@@ -12,22 +12,23 @@
     body::before, body::after { content: ""; position: fixed; width: 38rem; height: 38rem; border-radius: 50%; filter: blur(110px); opacity: .28; pointer-events: none; }
     body::before { background: #7c6cff; top: -19rem; left: -12rem; }
     body::after { background: #32d6c3; right: -19rem; bottom: -23rem; opacity: .16; }
-    main { position: relative; width: min(720px, calc(100% - 40px)); padding: clamp(42px, 9vw, 88px); border: 1px solid rgba(255,255,255,.12); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); box-shadow: 0 32px 100px rgba(0,0,0,.35); backdrop-filter: blur(18px); text-align: center; }
+    .site-nav { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); z-index: 1; display: flex; gap: 8px; padding: 5px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(16,19,29,.6); backdrop-filter: blur(12px); } .site-nav a { padding: 9px 15px; border-radius: 999px; color: #a8a9b8; text-decoration: none; font-size: 13px; transition: background .2s,color .2s; } .site-nav a:hover, .site-nav a[aria-current=page] { background: rgba(255,255,255,.1); color: #fff; } main { position: relative; width: min(720px, calc(100% - 40px)); padding: clamp(42px, 9vw, 88px); border: 1px solid rgba(255,255,255,.12); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); box-shadow: 0 32px 100px rgba(0,0,0,.35); backdrop-filter: blur(18px); text-align: center; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 28px; color: #bcb7d7; font-size: 12px; font-weight: 650; letter-spacing: .19em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #6ee7cf; box-shadow: 0 0 14px #6ee7cf; }
     h1 { margin: 0; font-size: clamp(48px, 10vw, 88px); line-height: .98; font-weight: 650; letter-spacing: -.075em; }
     h1 span { color: transparent; background: linear-gradient(100deg, #c6baff 5%, #fff 48%, #87e8d8 95%); background-clip: text; -webkit-background-clip: text; }
     p { max-width: 390px; margin: 24px auto 0; color: #a8a9b8; font-size: 16px; line-height: 1.7; }
     .rule { width: 42px; height: 1px; margin: 34px auto 0; background: linear-gradient(90deg, transparent, #8175d9, transparent); }
-    @media (prefers-reduced-motion: no-preference) { main { animation: arrive .8s cubic-bezier(.2,.8,.2,1) both; } @keyframes arrive { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } } }
+    @media (max-width: 480px) { .site-nav { top: 16px; } main { padding-top: 75px; } }\n    @media (prefers-reduced-motion: no-preference) { main { animation: arrive .8s cubic-bezier(.2,.8,.2,1) both; } @keyframes arrive { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } } }
   </style>
 </head>
 <body>
-  <main>
+  <div class="site-nav"><a href="hello-world.html" aria-current="page">Home</a><a href="about.html">About</a><a href="content.html">Content</a></div><main>
     <div class="eyebrow">A little beginning</div>
-    <h1><span>Hello,</span><br>World.</h1>
+    <h1><span>Hi,</span><br>My name is Ashwin Fernandes.</h1>
     <p>Every great idea starts with a first line. Here’s to what comes next.</p>
     <div class="rule" aria-hidden="true"></div>
   </main>
 </body>
 </html>
+
